@@ -4,7 +4,7 @@
 PowerShell -Command "Get-AppxPackage 'Microsoft.549981C3F5F10' | Remove-AppxPackage"
 
 :: Get Help
-PowerShell -Command "Get-AppxPackage 'Microsoft.GetHelp' | Remove-AppxPackage"
+:: PowerShell -Command "Get-AppxPackage 'Microsoft.GetHelp' | Remove-AppxPackage"
 
 :: Microsoft Tips
 PowerShell -Command "Get-AppxPackage 'Microsoft.Getstarted' | Remove-AppxPackage"
@@ -13,13 +13,13 @@ PowerShell -Command "Get-AppxPackage 'Microsoft.Getstarted' | Remove-AppxPackage
 PowerShell -Command "Get-AppxPackage 'Microsoft.Messaging' | Remove-AppxPackage"
 
 :: Mixed Reality Portal
-PowerShell -Command "Get-AppxPackage 'Microsoft.MixedReality.Portal' | Remove-AppxPackage"
+:: PowerShell -Command "Get-AppxPackage 'Microsoft.MixedReality.Portal' | Remove-AppxPackage"
 
 :: Feedback Hub
 PowerShell -Command "Get-AppxPackage 'Microsoft.WindowsFeedbackHub' | Remove-AppxPackage"
 
 :: Paint 3D 
-PowerShell -Command "Get-AppxPackage 'Microsoft.MSPaint' | Remove-AppxPackage"
+:: PowerShell -Command "Get-AppxPackage 'Microsoft.MSPaint' | Remove-AppxPackage"
 
 :: Windows Maps
 PowerShell -Command "Get-AppxPackage 'Microsoft.WindowsMaps' | Remove-AppxPackage"
@@ -55,7 +55,7 @@ PowerShell -Command "Get-AppxPackage 'Microsoft.SkypeApp' | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage 'Microsoft.GroupMe10' | Remove-AppxPackage"
 
 :: Windows Voice Recorder
-PowerShell -Command "Get-AppxPackage 'Microsoft.WindowsSoundRecorder' | Remove-AppxPackage"
+:: PowerShell -Command "Get-AppxPackage 'Microsoft.WindowsSoundRecorder' | Remove-AppxPackage"
 
 :: Microsoft 3D Builder
 PowerShell -Command "Get-AppxPackage 'Microsoft.3DBuilder' | Remove-AppxPackage"
@@ -98,13 +98,13 @@ PowerShell -Command "Get-AppxPackage 'Microsoft.Windows.Phone' | Remove-AppxPack
 PowerShell -Command "Get-AppxPackage 'Microsoft.CommsPhone' | Remove-AppxPackage"
 
 :: Your Phone
-PowerShell -Command "Get-AppxPackage 'Microsoft.YourPhone' | Remove-AppxPackage"
+:: PowerShell -Command "Get-AppxPackage 'Microsoft.YourPhone' | Remove-AppxPackage"
 
 :: Microsoft Advertising
 PowerShell -Command "Get-AppxPackage 'Microsoft.Advertising.Xaml' | Remove-AppxPackage"
 
 :: Remote Desktop
-PowerShell -Command "Get-AppxPackage 'Microsoft.RemoteDesktop' | Remove-AppxPackage"
+:: PowerShell -Command "Get-AppxPackage 'Microsoft.RemoteDesktop' | Remove-AppxPackage"
 
 :: Network Speed Test
 PowerShell -Command "Get-AppxPackage 'Microsoft.NetworkSpeedTest' | Remove-AppxPackage"
@@ -157,28 +157,28 @@ PowerShell -Command "Get-AppxPackage 'Clipchamp.Clipchamp' | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage 'Microsoft.BingSearch' | Remove-AppxPackage"
 
 :: Xbox
-PowerShell -Command "Get-AppxPackage 'Microsoft.GamingApp' | Remove-AppxPackage"
+:: PowerShell -Command "Get-AppxPackage 'Microsoft.GamingApp' | Remove-AppxPackage"
 
 :: Outlook
 PowerShell -Command "Get-AppxPackage 'Microsoft.OutlookForWindows' | Remove-AppxPackage"
 
 :: PowerAutomate
-PowerShell -Command "Get-AppxPackage 'Microsoft.PowerAutomateDesktop' | Remove-AppxPackage"
+:: PowerShell -Command "Get-AppxPackage 'Microsoft.PowerAutomateDesktop' | Remove-AppxPackage"
 
 :: Xbox TCUI
-PowerShell -Command "Get-AppxPackage 'Microsoft.Xbox.TCUI' | Remove-AppxPackage"
+:: PowerShell -Command "Get-AppxPackage 'Microsoft.Xbox.TCUI' | Remove-AppxPackage"
 
 :: Xbox GameBar
-PowerShell -Command "Get-AppxPackage 'Microsoft.XboxGamingOverlay' | Remove-AppxPackage"
+:: PowerShell -Command "Get-AppxPackage 'Microsoft.XboxGamingOverlay' | Remove-AppxPackage"
 
 :: Xbox Speech-To-Text
-PowerShell -Command "Get-AppxPackage 'Microsoft.XboxSpeechToTextOverlay' | Remove-AppxPackage"
+:: PowerShell -Command "Get-AppxPackage 'Microsoft.XboxSpeechToTextOverlay' | Remove-AppxPackage"
 
 :: QuickAssist
-PowerShell -Command "Get-AppxPackage 'MicrosoftCorporationII.QuickAssist' | Remove-AppxPackage"
+:: PowerShell -Command "Get-AppxPackage 'MicrosoftCorporationII.QuickAssist' | Remove-AppxPackage"
 
 :: Copilot
-PowerShell -Command "Get-AppxPackage 'Microsoft.Copilot' | Remove-AppxPackage"
+:: PowerShell -Command "Get-AppxPackage 'Microsoft.Copilot' | Remove-AppxPackage"
 
 :: Teams
 PowerShell -Command "Get-AppxPackage 'MSTeams' | Remove-AppxPackage"

@@ -28,7 +28,7 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "SpotlightExperiencesAndRecom
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ShowRecommendationsEnabled" /t REG_DWORD /d 0 /f
 
 :: Disable Edge Bing ads
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "BingAdsSuppression" /t REG_DWORD /d 0 /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "BingAdsSuppression" /t REG_DWORD /d 1 /f
 
 :: Disable Edge browsing history collection for ads
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "PersonalizationReportingEnabled" /t REG_DWORD /d 0 /f
@@ -46,7 +46,7 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "NewTabPageHideDefaultTopSite
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "TrackingPrevention" /t REG_DWORD /d 3 /f
 
 :: Block Edge third party cookies
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "BlockThirdPartyCookies" /t REG_DWORD /d 1 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "BlockThirdPartyCookies" /t REG_DWORD /d 1 /f
 
 :: Enable Do Not Track requests
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ConfigureDoNotTrack" /t REG_DWORD /d 1 /f
@@ -59,13 +59,13 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "SearchbarAllowed" /t REG_DWO
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "SearchbarIsEnabledOnStartup" /t REG_DWORD /d 0 /f
 
 :: Disable Edge Microsoft Rewards
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ShowMicrosoftRewards" /t REG_DWORD /d 0 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ShowMicrosoftRewards" /t REG_DWORD /d 0 /f
 
 :: Disable Edge search and site suggestions
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "SearchSuggestEnabled" /t REG_DWORD /d 0 /f
 
 :: Disable Edge quick links on the new tab page
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "NewTabPageQuickLinksEnabled" /t REG_DWORD /d 0 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "NewTabPageQuickLinksEnabled" /t REG_DWORD /d 0 /f
 
 :: Disable Edge remote background images on new tab page
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "NewTabPageAllowedBackgroundTypes" /t REG_DWORD /d 1 /f
@@ -92,25 +92,25 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "StartupBoostEnabled" /t REG_
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ResolveNavigationErrorsUseWebService" /t REG_DWORD /d 0 /f
 
 :: Disable Edge Family Safety settings
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "FamilySafetySettingsEnabled" /t REG_DWORD /d 0 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "FamilySafetySettingsEnabled" /t REG_DWORD /d 0 /f
 
 :: Block websites from asking for location access
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "DefaultGeolocationSetting" /t REG_DWORD /d 2 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "DefaultGeolocationSetting" /t REG_DWORD /d 2 /f
 
 :: Configure camera and microphone access based on user preference
-if /i "%streaming_choice%"=="y" (
-    echo Allowing camera and microphone access for streaming/video calls...
-    :: Allow websites to request camera access
-    reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "VideoCaptureAllowed" /t REG_DWORD /d 1 /f
-    :: Allow websites to request microphone access
-    reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "AudioCaptureAllowed" /t REG_DWORD /d 1 /f
-) else (
-    echo Blocking camera and microphone access for privacy...
-    :: Block websites from accessing camera
-    reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "VideoCaptureAllowed" /t REG_DWORD /d 0 /f
-    :: Block websites from accessing microphone
-    reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "AudioCaptureAllowed" /t REG_DWORD /d 0 /f
-)
+::if /i "%streaming_choice%"=="y" (
+::    echo Allowing camera and microphone access for streaming/video calls...
+::    :: Allow websites to request camera access
+::    reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "VideoCaptureAllowed" /t REG_DWORD /d 1 /f
+::    :: Allow websites to request microphone access
+::    reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "AudioCaptureAllowed" /t REG_DWORD /d 1 /f
+::) else (
+::    echo Blocking camera and microphone access for privacy...
+::    :: Block websites from accessing camera
+::    reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "VideoCaptureAllowed" /t REG_DWORD /d 0 /f
+::    :: Block websites from accessing microphone
+::    reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "AudioCaptureAllowed" /t REG_DWORD /d 0 /f
+::)
 
 :: Block website notifications by default
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "DefaultNotificationsSetting" /t REG_DWORD /d 2 /f
@@ -128,21 +128,21 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "PasswordManagerEnabled" /t R
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "PasswordMonitorAllowed" /t REG_DWORD /d 0 /f
 
 :: Disable sync to Microsoft account
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "SyncDisabled" /t REG_DWORD /d 1 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "SyncDisabled" /t REG_DWORD /d 1 /f
 
 :: Disable importing data from other browsers
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportAutofillFormData" /t REG_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportBrowserSettings" /t REG_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportCookies" /t REG_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportExtensions" /t REG_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportFavorites" /t REG_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportHistory" /t REG_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportHomepage" /t REG_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportOpenTabs" /t REG_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportPaymentInfo" /t REG_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportSavedPasswords" /t REG_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportSearchEngine" /t REG_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportShortcuts" /t REG_DWORD /d 0 /f
+::reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportAutofillFormData" /t REG_DWORD /d 0 /f
+::reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportBrowserSettings" /t REG_DWORD /d 0 /f
+::reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportCookies" /t REG_DWORD /d 0 /f
+::reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportExtensions" /t REG_DWORD /d 0 /f
+::reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportFavorites" /t REG_DWORD /d 0 /f
+::reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportHistory" /t REG_DWORD /d 0 /f
+::reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportHomepage" /t REG_DWORD /d 0 /f
+::reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportOpenTabs" /t REG_DWORD /d 0 /f
+::reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportPaymentInfo" /t REG_DWORD /d 0 /f
+::reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportSavedPasswords" /t REG_DWORD /d 0 /f
+::reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportSearchEngine" /t REG_DWORD /d 0 /f
+::reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ImportShortcuts" /t REG_DWORD /d 0 /f
 
 :: Disable typosquatting checker (sends URLs to Microsoft)
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "TyposquattingCheckerEnabled" /t REG_DWORD /d 0 /f
@@ -157,7 +157,7 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "TranslateEnabled" /t REG_DWO
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "NetworkPredictionOptions" /t REG_DWORD /d 2 /f
 
 :: Disable background sync
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "BackgroundModeEnabled" /t REG_DWORD /d 0 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "BackgroundModeEnabled" /t REG_DWORD /d 0 /f
 
 :: Disable Edge sleeping tabs data collection
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "SleepingTabsEnabled" /t REG_DWORD /d 0 /f
@@ -181,19 +181,19 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "DefaultSensorsSetting" /t RE
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "DefaultWebHIDGuardSetting" /t REG_DWORD /d 2 /f
 
 :: Block file system read access (File System Access API)
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "DefaultFileSystemReadGuardSetting" /t REG_DWORD /d 2 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "DefaultFileSystemReadGuardSetting" /t REG_DWORD /d 2 /f
 
 :: Block file system write access
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "DefaultFileSystemWriteGuardSetting" /t REG_DWORD /d 2 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "DefaultFileSystemWriteGuardSetting" /t REG_DWORD /d 2 /f
 
 :: Block clipboard access (Clipboard API)
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "DefaultClipboardSetting" /t REG_DWORD /d 2 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "DefaultClipboardSetting" /t REG_DWORD /d 2 /f
 
 :: Block Window Management API (multi-window control)
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "DefaultWindowManagementSetting" /t REG_DWORD /d 2 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "DefaultWindowManagementSetting" /t REG_DWORD /d 2 /f
 
 :: Create sensors blocked URLs key
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge\SensorsBlockedForUrls" /v "1" /t REG_SZ /d "*" /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge\SensorsBlockedForUrls" /v "1" /t REG_SZ /d "*" /f
 
 :: Create WebUSB blocked URLs key
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls" /v "1" /t REG_SZ /d "*" /f
@@ -206,7 +206,7 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge\URLBlocklist" /v "2" /t REG_SZ /d
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge\URLBlocklist" /v "3" /t REG_SZ /d "ms-appinstaller:*" /f
 
 :: Disable browser sign-in
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "BrowserSignin" /t REG_DWORD /d 0 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "BrowserSignin" /t REG_DWORD /d 0 /f
 
 :: Disable forced sign-in for Microsoft services
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "ForceSync" /t REG_DWORD /d 0 /f
@@ -218,10 +218,10 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "PerformanceDetectorEnabled" 
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "WorkspacesNavigationSettings" /t REG_DWORD /d 2 /f
 
 :: Disable Edge mini menu
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "QuickSearchShowMiniMenu" /t REG_DWORD /d 0 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "QuickSearchShowMiniMenu" /t REG_DWORD /d 0 /f
 
 :: Disable Edge visual search
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "VisualSearchEnabled" /t REG_DWORD /d 0 /f
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "VisualSearchEnabled" /t REG_DWORD /d 0 /f
 
 :: Disable Edge content suggestions
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v "NewTabPageContentEnabled" /t REG_DWORD /d 0 /f

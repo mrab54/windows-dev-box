@@ -1,14 +1,14 @@
 :: Spectre variant 2 and meltdown (own OS)
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "FeatureSettingsOverrideMask" /t REG_DWORD /d 3 /f
-wmic cpu get name | findstr "Intel" >nul && (
-    reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "FeatureSettingsOverride" /t REG_DWORD /d 0 /f
-)
-wmic cpu get name | findstr "AMD" >nul && (
-    reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "FeatureSettingsOverride" /t REG_DWORD /d 64 /f
-)
+:: reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "FeatureSettingsOverrideMask" /t REG_DWORD /d 3 /f
+:: wmic cpu get name | findstr "Intel" >nul && (
+::     reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "FeatureSettingsOverride" /t REG_DWORD /d 0 /f
+:: )
+:: wmic cpu get name | findstr "AMD" >nul && (
+::     reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "FeatureSettingsOverride" /t REG_DWORD /d 64 /f
+:: )
 
 :: Spectre variant 2 and meltdown (HyperV)
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization" /v MinVmVersionForCpuBasedMitigations /t REG_SZ /d "1.0" /f
+:: reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization" /v MinVmVersionForCpuBasedMitigations /t REG_SZ /d "1.0" /f
 
 :: Disable unsafe SMBv1 protocol
 dism /online /Disable-Feature /FeatureName:"SMB1Protocol" /NoRestart
@@ -58,7 +58,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v "LmCompatibilityLevel" /t
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "DisableExceptionChainValidation" /t REG_DWORD /d 0 /f
 
 :: Block Anonymous enumeration of SAM accounts
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "RestrictAnonymousSAM" /t REG_DWORD /d 1 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v "RestrictAnonymousSAM" /t REG_DWORD /d 1 /f
 
 :: Restrict anonymous access to Named Pipes and Shares
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\LanManServer\Parameters" /v "RestrictNullSessAccess" /t REG_DWORD /d 1 /f
@@ -78,13 +78,13 @@ PowerShell -Command "$key = 'HKLM:SYSTEM\CurrentControlSet\services\NetBT\Parame
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp" /v "DisableWpad" /t REG_DWORD /d 1 /f
 
 :: Disable SMB1
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" /v "SMB1 " /t REG_DWORD /d 0 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" /v "SMB1" /t REG_DWORD /d 0 /f
 
 :: Disable remote shell
-reg add "HKLM\Software\Policies\Microsoft\Windows\WinRM\Service\WinRS" /v "AllowRemoteShellAccess " /t REG_DWORD /d 0 /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\WinRM\Service\WinRS" /v "AllowRemoteShellAccess" /t REG_DWORD /d 0 /f
 
 :: Don't default to automatic elevated installs
-reg add "HKLM\Software\Policies\Microsoft\Windows\Installer" /v "AlwaysInstallElevated " /t REG_DWORD /d 0 /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Installer" /v "AlwaysInstallElevated" /t REG_DWORD /d 0 /f
 
 :: Don't default to automatic elevated installs
-reg add "HKCU\Software\Policies\Microsoft\WindowsMediaPlayer" /v "PreventCodecDownload " /t REG_DWORD /d 1 /f
+reg add "HKCU\Software\Policies\Microsoft\WindowsMediaPlayer" /v "PreventCodecDownload" /t REG_DWORD /d 1 /f

@@ -11,7 +11,7 @@ if %OS%==64BIT (
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /f /v ShowSecondsInSystemClock /t REG_DWORD /d 1
 
 :: Remove the lock screen because it just adds another reason to press the spacebar.
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Personalization" /f /v NoLockScreen /t REG_DWORD /d 1
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Personalization" /f /v NoLockScreen /t REG_DWORD /d 1
 
 :: Stop the "shake to minimize" window behavior.
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /f /v DisallowShaking /t REG_DWORD /d 1
@@ -39,21 +39,21 @@ reg add "HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\Sys
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers" /f /v DisableAutoplay /t REG_DWORD /d 1
 
 :: Disable the OS writing "Last Accessed."
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /f /v NtfsDisableLastAccessUpdate /t REG_DWORD /d 80000001
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /f /v NtfsDisableLastAccessUpdate /t REG_DWORD /d 1
 
 :: Disable Microsoft Store pinning to taskbar.
-reg add "HKCU\SOFTWARE\Policies\Microsoft\Windows\Explorer" /f /v NoPinningStoreToTaskbar /t REG_DWORD /d 1
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer" /f /v NoPinningStoreToTaskbar /t REG_DWORD /d 1
+:: reg add "HKCU\SOFTWARE\Policies\Microsoft\Windows\Explorer" /f /v NoPinningStoreToTaskbar /t REG_DWORD /d 1
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer" /f /v NoPinningStoreToTaskbar /t REG_DWORD /d 1
 
 :: Hide Edge button in IE.
-reg add "HKCU\SOFTWARE\Policies\Microsoft\Internet Explorer\Main" /f /v HideNewEdgeButton /t REG_DWORD /d 1
+:: reg add "HKCU\SOFTWARE\Policies\Microsoft\Internet Explorer\Main" /f /v HideNewEdgeButton /t REG_DWORD /d 1
 
 :: Remove "Look for app in the Store."
 reg add "HKLM\Software\Policies\Microsoft\Windows\Explorer" /f /v NoUseStoreOpenWith /t REG_DWORD /d 1
 reg add "HKCU\Software\Policies\Microsoft\Windows\Explorer" /f /v NoUseStoreOpenWith /t REG_DWORD /d 1
 
 :: Don't notify about new apps in Start Menu.
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /f /v Start_NotifyNewApps /t REG_DWORD /d 0
+:: reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /f /v Start_NotifyNewApps /t REG_DWORD /d 0
 
 :: Hide "Get Help" from Start Menu.
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /f /v Start_ShowHelp /t REG_DWORD /d 0
@@ -65,7 +65,7 @@ reg add "HKLM\Software\Policies\Microsoft\Edge" /f /v NewTabPageLocation /t REG_
 reg add "HKLM\Software\Policies\Microsoft\Edge" /f /v ShowRecommendationsEnabled /t REG_DWORD /d 0
 
 :: Disable random software from being installed with your drivers.
-reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Installer" /f /v DisableCoInstallers /t REG_DWORD /d 1
+:: reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Installer" /f /v DisableCoInstallers /t REG_DWORD /d 1
 
 :: Prevent Windows Update from installing PC Health Check.
 reg add "HKLM\SOFTWARE\Microsoft\PCHC" /f /v PreviousUninstall /t REG_DWORD /d 00000001
@@ -114,7 +114,7 @@ reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\Inpr
 reg add "HKCR\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f /v System.IsPinnedToNameSpaceTree /t REG_DWORD /d 0
 
 :: Remove OneDrive from pinned entries.
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\System" /f /v DisableLogonBackgroundImage /t REG_DWORD /d 1
+:: reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\System" /f /v DisableLogonBackgroundImage /t REG_DWORD /d 1
 
 :: Make Windows Explorer to always launch on This PC.
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /f /v LaunchTo /t REG_DWORD /d 1
@@ -139,7 +139,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "T
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "HideSCAMeetNow" /t REG_DWORD /d 1 /f
 
 :: Make sure that the Print Screen button maintains its designed behavior.
-reg add "HKCU\Control Panel\Keyboard\PrintScreenKeyForSnippingEnabled" /v "HideSCAMeetNow" /t REG_DWORD /d 0 /f
+:: reg add "HKCU\Control Panel\Keyboard\PrintScreenKeyForSnippingEnabled" /v "HideSCAMeetNow" /t REG_DWORD /d 0 /f
 
 :: Disable lock screen slide show
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Lock Screen" /v "SlideshowEnabled" /t REG_DWORD /d 0 /f
@@ -158,17 +158,17 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "S
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarFlashing" /d "0" /t REG_DWORD /f
 
 :: Align taskbar to left
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarAl" /d "0" /t REG_DWORD /f
+:: reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarAl" /d "0" /t REG_DWORD /f
 
 :: Disable clipboard suggested actions
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\SmartActionPlatform\SmartClipboard" /v "Disabled" /d "1" /t REG_DWORD /f
+:: reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\SmartActionPlatform\SmartClipboard" /v "Disabled" /d "1" /t REG_DWORD /f
 
 :: Disable cloud content
-reg add "HKCU\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableSpotlightCollectionOnDesktop" /d "1" /t REG_DWORD /f
-reg add "HKCU\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableWindowsSpotlightFeatures" /d "1" /t REG_DWORD /f
-reg add "HKCU\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableTailoredExperiencesWithDiagnosticData" /d "1" /t REG_DWORD /f
-reg add "HKCU\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableThirdPartySuggestions" /d "1" /t REG_DWORD /f
-reg add "HKCU\Software\Policies\Microsoft\Windows\CloudContent" /v "ConfigureWindowsSpotlight" /d "2" /t REG_DWORD /f
+:: reg add "HKCU\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableSpotlightCollectionOnDesktop" /d "1" /t REG_DWORD /f
+:: reg add "HKCU\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableWindowsSpotlightFeatures" /d "1" /t REG_DWORD /f
+:: reg add "HKCU\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableTailoredExperiencesWithDiagnosticData" /d "1" /t REG_DWORD /f
+:: reg add "HKCU\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableThirdPartySuggestions" /d "1" /t REG_DWORD /f
+:: reg add "HKCU\Software\Policies\Microsoft\Windows\CloudContent" /v "ConfigureWindowsSpotlight" /d "2" /t REG_DWORD /f
 
 :: Disable toast notifications on the lock screen
 reg add "HKCU\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" /v "NoToastApplicationNotificationOnLockScreen" /d "1" /t REG_DWORD /f
